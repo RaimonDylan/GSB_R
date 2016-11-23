@@ -8,11 +8,16 @@
 try{
   define('RACINE', __DIR__);
   include_once('config/conf.php');
-  include_once(INCLUDE_PATH.'connect.php');
-  $conn = connectionBd();
+  // AutoLoader
+  require 'autoload.php';
+  AutoLoader::Register();
+  $bdd = new Bdd();
+  //$Connexion = Connexion::getInstance();
   ?>
   <body>
-    <div>coucou</div>
+    <div>
+      <p><?php Client::findAll($bdd);?> </p>
+    </div>
   </body>
   <?php
 }catch (Exception $ex){
