@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Principal:message{% endblock %}
+
+{% block body %}
+    <h1>Vous êtes né dans le département {{ message }} <br>
+    Nous sommes le : {{ "now"|date("D d M Y H:i ", "Europe/Paris") }} <br>
+    {{ dir }}</h1>
+{% endblock %}
