@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    {% block css %} {% endblock %}
+    {% block icone %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+<header id="headerSite">
+    <aside id="logo"></aside>
+    <nav id="menuHeader">
+        <ul class="nav nav-tabs">{% block liens %} {% endblock %}</ul>
+    </nav>
+    <div class="separateurHorizontal"></div>
+</header>
+<section id="descriptifDivers">
+    <h1>{% block head %} {% endblock %}</h1>
+    <h2>{% block body %} {% endblock %}</h2>
+    <p>{% block widgets %} {% endblock %}</p>
+    <H1> Bravo pour l'exercice !</H1>
+</section>
+{% block footer %}
+    <footer id="footerSite">
+        <div class="separateurHorizontal"></div>
+        <article id="descriptifFooter">
+            <header>
+                <h2>Mentions légales</h2>
+            </header>
+            <p>
+                BLABLAusqdhgoiuqwsygnqtistfgnisudnosd_yf
+            </p>
+        </article>
+        <article id="partenaireFooter">
+            <header>
+                <h2>Contacts</h2>
+            </header>
+            <p>
+                BLABLAsjigfouqginftqçstgnqisgnukqysnfoiqgsf
+            </p>
+        </article>
+    </footer>
+{% endblock %}
+</body>
+</html>

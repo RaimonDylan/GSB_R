@@ -1,0 +1,53 @@
+<?php
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Ramassage
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="date", nullable=false)
+     */
+    private $dateHeure;
+
+    /**
+     * @ORM\Column(type="integer", nullable=false)
+     */
+    private $nbBidons;
+
+    /**
+     * @ORM\Column(type="integer", nullable=false)
+     */
+    private $nbLitres;
+
+    /**
+     * @ORM\Column(type="float", nullable=false)
+     */
+    private $tauxMatiereGrasse;
+
+    /**
+     * @ORM\Column(type="date", nullable=false)
+     */
+    private $dateRamassage;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Ramasseur", inversedBy="ramassage")
+     * @ORM\JoinColumn(name="ramasseur_id", referencedColumnName="id", nullable=false)
+     */
+    private $ramasseur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Producteur", inversedBy="ramassage")
+     * @ORM\JoinColumn(name="producteur_id", referencedColumnName="id", nullable=false)
+     */
+    private $producteur;
+}

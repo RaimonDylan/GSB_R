@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 09 Avril 2015 à 23:38
+-- Généré le: Ven 25 Novembre 2016 à 10:43
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.16
 
@@ -13,68 +13,63 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `clientsoo`
+-- Base de données: `acceswifi`
 --
-CREATE DATABASE IF NOT EXISTS `clientsoo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `clientsoo`;
+CREATE DATABASE IF NOT EXISTS `acceswifi` 
+USE `acceswifi`;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `client`
+-- Structure de la table `port_etudiant`
 --
 
-CREATE TABLE IF NOT EXISTS `client` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `TITRE` varchar(12) NOT NULL DEFAULT 'Monsieur',
-  `NOM` varchar(30) NOT NULL,
-  `PRENOM` varchar(30) NOT NULL,
-  `ADRESSERUE1` varchar(40) NOT NULL,
-  `ADRESSERUE2` varchar(40) DEFAULT NULL,
-  `CP` varchar(6) NOT NULL,
-  `VILLE` varchar(30) NOT NULL,
-  `TEL` varchar(14) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+CREATE TABLE IF NOT EXISTS `port_etudiant` (
+  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `numGroupe` int(11) NULL DEFAULT ,
+  `nom` varchar(32) NOT NULL,
+  `prenom` varchar(32) NOT NULL,
+  `mel` varchar(64) NOT NULL,
+  `mdp` varchar(32) NOT NULL,
+  `numexam` varchar(16) NULL DEFAULT,
+  `valide` varchar(1) NOT NULL DEFAULT 'O',
+  PRIMARY KEY (`num`)
+  KEY `ietudgrou` (`numGroupe`);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `client`
+-- Contenu de la table `port_etudiant`
 --
 
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(1, 'Monsieur', 'Tienun', 'Jean', '112, rue du Départ', NULL, '13000 ', 'Marseille', '0404040404');
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(2, 'Madame', 'Terrature', 'Julie', 'Résidence Mermoz', '1234 Boulevard des Aviateurs', '14000 ', 'Caen', '0202020202');
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(3, 'Mademoiselle', 'Morizet', 'Patricia', 'Hameau de Pau', '23 Boulevard du Lycée', '33000 ', 'Bordeaux', '0250505052');
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(4, 'Monsieur', 'Nolapin', 'Jean', '12 quai des Brumes', NULL, '83000 ', 'Toulon', '0404505050');
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(5, 'Monsieur', 'Entete', 'Martel', 'Résidence du Faron', '30 rue du téléphérique', '83000 ', 'Toulon', '0250505050');
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(6, 'Monsieur', 'Entete', 'Martel', '12 Avenue de Lille', NULL, '59140 ', 'Dunkerque', '0250905057');
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(7, 'Madame', 'DUMANS', 'Henriette', 'Corniche des Bolides', 'Villa Ferrari', '49000 ', 'Angers', '0250765357');
-INSERT INTO `client` (`ID`, `TITRE`, `NOM`, `PRENOM`, `ADRESSERUE1`, `ADRESSERUE2`, `CP`, `VILLE`, `TEL`) VALUES(8, 'Madame', 'Cerf', 'Paulette', '343 Avenue Henri Barbusse', NULL, '33000 ', 'Bordeaux', '0550505050');
+INSERT INTO `port_etudiant` (`num`, `numGroupe`, `nom`, `prenom`, `mel`, `mdp`, `numexam`, `valide`) VALUES(1, 1, 'Raimon', 'Dylan', 'dylanraimon@gmail.com', 'admin!', '1231231231231231', 'O');
+
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commande`
+-- Structure de la table `port_professeur`
 --
 
-CREATE TABLE IF NOT EXISTS `commande` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `IDCLIENT` int(11) NOT NULL,
-  `DATECDE` date NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `FK_COMMANDE_CLIENT` (`IDCLIENT`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+CREATE TABLE IF NOT EXISTS `port_professeur` (
+  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(32) NOT NULL,
+  `prenom` varchar(32) NOT NULL,
+  `mel` varchar(64) NOT NULL,
+  `mdp` varchar(32) NOT NULL,
+  `niveau` int(11) NOT NULL ,
+  `valide` varchar(1) DEFAULT 'O',
+  PRIMARY KEY (`num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `commande`
+-- Contenu de la table `port_professeur`
 --
 
-INSERT INTO `commande` (`ID`, `IDCLIENT`, `DATECDE`) VALUES(1, 1, '2014-09-07');
+INSERT INTO `port_professeur` (`num`, `nom`, `prenom`, `mel`, `mdp`, `niveau`, `valide`) VALUES(1, 'Admin', 'Admin', 'dylanraimon@gmail.com', 'admin!', 1, 'O');
 INSERT INTO `commande` (`ID`, `IDCLIENT`, `DATECDE`) VALUES(2, 2, '2014-09-08');
 INSERT INTO `commande` (`ID`, `IDCLIENT`, `DATECDE`) VALUES(3, 3, '2014-09-10');
 INSERT INTO `commande` (`ID`, `IDCLIENT`, `DATECDE`) VALUES(4, 2, '2014-10-01');

@@ -12,8 +12,8 @@
     <p><h3> Sport préféré :
     {% if(sport == 'VolleyBall') %}
         {{ sport | upper }}
-        {% else %}
-        {{ 'Aucun intérêt' }}
+    {% else %}
+            {{ 'Aucun intérêt' }}
     {% endif %}</h3></p>
     <p><h3> voitures préférées :</h3>
     {% for uneAuto in autos %}

@@ -1,0 +1,45 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block icone %}
+    <a href={{ path('lectureCtrl_afficheEmpParam') }} title='Tutoriel_symfony'>
+        {% image '@AppBundle/Public/images/clindoeil.png' %}
+        <img src="{{ asset_url }}" alt="Cliendoeil" />
+        {% endimage %}
+    </a>
+{% endblock %}
+{% block title %} Deux {% endblock %}
+{% block head %} tete à l'envers {% endblock %}
+{% block body %} <H1>{{ uneEntree }}</H1> {% endblock %}
+{% block widgets %} {{ form(leFormulaire) }} {% endblock %}
+{% block liens %}
+    <li><a href={{ path('lectureCtrl_index') }}> Index </a></li>
+    <li><a href={{ path('lectureCtrl_afficheEmpParam') }}> Exercice Paramètres</a></li>
+    <li><a href={{ path('lectureCtrl_afficheEmpTwig') }}> Exercice Twig</a></li>
+{% endblock %}
+{% block css %}
+{% stylesheets '@AppBundle/Public/css/*' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css"  />
+{% endstylesheets %}
+{% endblock %}
+{% block footer %}
+    <div class="separateurHorizontal"></div>
+    <article id="descriptifFooter">
+        <header>
+            <h2>Mentions légales</h2>
+        </header>
+        <p>
+            Nouvelles mentions légales
+        </p>
+    </article>
+    <article id="partenaireFooter">
+        <header>
+            <h2>Contacts</h2>
+        </header>
+        <p>
+            <li> Monsieur Symfony</li>
+            <li> Monsieur Twig</li>
+            <li> Monsieur Doctrine</li>
+        </p>
+    </article>
+</footer>
+{% endblock %}

@@ -16,7 +16,7 @@ try{
   ?>
   <body>
     <div>
-      <p><?php Client::findAll($bdd);?> </p>
+      <p><?php ClientRepository::findAll($bdd);?> </p>
     </div>
   </body>
   <?php

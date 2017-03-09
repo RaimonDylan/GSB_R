@@ -1,0 +1,430 @@
+body
+{
+    font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+    font-size: 14px;
+    color: #878787;
+    
+}
+
+p
+{
+    line-height: 24px;
+}
+
+
+a
+{
+    text-decoration: none;
+    color: #47d4f9;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#headerSite
+{
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.separateurHorizontal
+{
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    display: inline-block;
+}
+
+#logo
+{
+    float: left;
+}
+
+#menuHeader
+{
+    float: right;
+    margin-top: 40px;
+}
+
+#menuHeader li
+{
+    display: inline-block;
+    margin-left: 24px;
+}
+
+#menuHeader li a
+{
+    color: #878787;
+    text-decoration: none;
+}
+
+#menuHeader li a:hover
+{
+    color: #47d4f9;
+    text-decoration: underline;
+}
+
+#contenuPage
+{
+    width: 1000px;
+    margin: auto;
+    min-height: 600px;
+}
+
+#descriptifDivers
+{
+    height: 500px;
+    color: white;
+    background: #34c6ea;
+    background: -moz-linear-gradient(top, #34c6ea, #47d4f9);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#34c6ea),color-stop(100%,#47d4f9));
+    background: -webkit-linear-gradient(top,#34c6ea,#47d4f9);
+    background: -o-linear-gradient(top,#34c6ea,#47d4f9);
+    background: -ms-linear-gradient(top,#34c6ea,#47d4f9);
+    background: linear-gradient(top,#34c6ea,#47d4f9);
+}
+
+#descriptifDivers h2
+{
+    color: white;
+}
+
+#descriptifDivers>img
+{
+    margin-top: -16px;
+}
+
+figure
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#moduleIndex article
+{
+    width: 250px;
+    text-align: center;
+    float: left;
+    margin-left: 60px;
+    line-height: 24px;
+}
+
+#moduleIndex>h1
+{
+    text-align: center;
+}
+
+#footerSite
+{
+    width: 1000px;
+    margin: auto;
+}
+
+#descriptifFooter
+{
+    width: 220px;
+    float: left;
+}
+
+#partenaireFooter
+{
+    width: 730px;
+    float: left;
+    margin-left: 50px;
+}
+
+.boutonPlus
+{
+    color: #878787;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #e1e1e1;
+    background: -moz-linear-gradient(top, #f9f9f9, #e1e4e6);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f9f9f9),color-stop(100%,#e1e4e6));
+    background: -webkit-linear-gradient(top,#f9f9f9,#e1e4e6);
+    background: -o-linear-gradient(top,#f9f9f9,#e1e4e6);
+    background: -ms-linear-gradient(top,#f9f9f9,#e1e4e6);
+    background: linear-gradient(top,#f9f9f9,#e1e4e6);
+}
+
+.boutonPlus:hover
+{
+    background: #34c6ea;
+    background: -moz-linear-gradient(top, #47d4f9, #34c6ea);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#47d4f9),color-stop(100%,#34c6ea));
+    background: -webkit-linear-gradient(top,#47d4f9,#34c6ea);
+    background: -o-linear-gradient(top,#47d4f9,#34c6ea);
+    background: -ms-linear-gradient(top,#47d4f9,#34c6ea);
+    background: linear-gradient(top,#47d4f9,#34c6ea);
+    color: white;
+}
+
+#colonneDroite, #colonneCentre, #colonneGauche
+{
+    float: left;
+    line-height: 24px;
+}
+
+#colonneDroite, #colonneGauche
+{
+    width: 250px;
+    margin-top: 20px;
+}
+
+#colonneDroite
+{
+    text-align: left;
+    margin-left: 40px;
+}
+
+#colonneGauche
+{
+    text-align: right;
+    margin-left: 60px;
+}
+
+#colonneCentre
+{
+    margin-left: 40px;
+}
+
+#descriptifDivers>h1
+{
+    text-align: center;
+    padding-top: 30px;
+    color: white;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('fontes/raleway_thin-webfont-webfont.eot');
+    src: url('fontes/raleway_thin-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fontes/raleway_thin-webfont-webfont.woff') format('woff'),
+         url('fontes/raleway_thin-webfont-webfont.ttf') format('truetype'),
+         url('fontes/raleway_thin-webfont-webfont.svg#ralewaythin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1
+{
+    font-family: 'raleway';
+    font-size: 40px;
+    color: #2c2c2c;
+    text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
+}
+
+h2
+{
+    font-family: 'Century Gothic';
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
+    color: #2c2c2c;
+    text-transform: uppercase;
+   
+}
+
+.rond
+{
+    border: 4px solid white;
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.1) inset; 
+}
+
+#structureColonneGauche
+{
+    width: 220px;
+    float: left;
+    text-align: justify;
+}
+
+#structureColonnneDroite
+{
+    width: 730px;
+    float: left;
+    margin-left: 50px;
+    text-align: justify;
+}
+
+h3
+{
+    color: #47d4f9;
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.moduleNormal
+{
+    width: 210px;
+    float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+    
+}
+
+.inputTexte
+{
+    width: 400px;
+    height: 40px;
+    border: 1px solid #e1e1e1;
+    display: block;
+}
+
+.inputQuantite
+{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #e1e1e1;
+    display: block;   
+}
+
+.inputQuantite input
+{
+    outline: 0px;
+    border: 0px;
+    height: 40px;
+    position: relative;
+    background: transparent;
+    width: 90px;
+    padding-left:  10px;
+    height: 38px;
+}
+.inputTexte label
+{
+    position: relative;
+    top: 12px;
+    left: 8px;
+    width: 80px;
+    display: block;
+}
+
+.inputTexte input
+{
+    outline: 0px;
+    border: 0px;
+    height: 40px;
+    position: relative;
+    background: transparent;
+    left: 80px;
+    width: 320px;
+    top: -18px;
+}
+
+.inputTexte select
+{
+    outline: 0px;
+    border: 0px;
+    height: 40px;
+    position: relative;
+    background: transparent;
+    left: 80px;
+    width: 320px;
+    top: -16px;
+}
+
+.inputTextarea textarea
+{
+    outline: 0px;
+    border: 0px;
+    height: 174px;
+    position: relative;
+    background: transparent;
+    left: 80px;
+    width: 456px;
+    top: -6px;
+    resize: none;
+}
+
+.inputTextarea
+{
+    width: 550px;
+    height: 200px;
+    border: 1px solid #e1e1e1;
+    display: block;
+}
+
+.inputTextarea label
+{
+    position: relative;
+    top: 12px;
+    left: 8px;
+    width: 60px;
+    display: block;
+}
+
+#structureContactsColonneDroite
+{
+    width: 400px;
+    float: left;
+}
+
+#structureContactsColonneGauche
+{
+    width: 550px;
+    float: left;
+    margin-left: 50px;
+}
+
+#erreur
+{
+    position: relative;
+    top: 100px;
+    text-align: center;
+}
+
+#erreur img
+{
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+#erreur figcaption
+{
+    margin-top: 20px;
+    font-family: "raleway";
+    font-size: 20px;
+    color: #2c2c2c;
+    text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
+}
+
+#reservation td
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+}
+
+#tarification td
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.libelle
+{
+    width: 300px;
+}
+
+.tarif
+{
+    width: 90px;
+}
+
+
+

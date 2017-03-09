@@ -1,0 +1,79 @@
+<?php
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Producteur
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=80, nullable=false)
+     */
+    private $adrRue1;
+
+    /**
+     * @ORM\Column(type="string", length=80, nullable=false)
+     */
+    private $adrRue2;
+
+    /**
+     * @ORM\Column(type="integer", length=5, nullable=false)
+     */
+    private $cp;
+
+    /**
+     * @ORM\Column(type="string", length=20, nullable=false)
+     */
+    private $ville;
+
+    /**
+     * @ORM\Column(type="integer", nullable=false)
+     */
+    private $distance;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ramassage", mappedBy="producteur")
+     */
+    private $ramassage;
+
+    /**
+     * 
+     * @ORM\JoinColumn(name="ramasseur_id", referencedColumnName="id", nullable=false, unique=true)
+     * @ORM\OneToOne(targetEntity="Ramasseur", inversedBy="producteur")
+     */
+    private $ramasseur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Secteur", inversedBy="producteur")
+     * @ORM\JoinColumn(name="secteur_id", referencedColumnName="id", nullable=false)
+     */
+    private $secteur;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Producteur", inversedBy="producteur2")
+     * @ORM\JoinTable(
+     *     name="Distance",
+     *     joinColumns={@ORM\JoinColumn(name="producteur_first_id", referencedColumnName="id", nullable=false)},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="producteur_second_id", referencedColumnName="id", nullable=false)}
+     * )
+     */
+    private $producteur1;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Producteur", mappedBy="producteur1")
+     */
+    private $producteur2;
+}

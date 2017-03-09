@@ -1,7 +1,12 @@
-{% extends "::base.html.twig" %}
+{% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}Les formulaires symfony{% endblock %}
 
 {% block body %}
     {{ form(leFormulaire) }}
+{% endblock %}
+{% block css %}
+    {% stylesheets '@AppBundle/Public/css/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"  />
+    {% endstylesheets %}
 {% endblock %}

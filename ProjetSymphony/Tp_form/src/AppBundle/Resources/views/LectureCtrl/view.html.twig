@@ -1,12 +1,17 @@
-{% extends "::base.html.twig" %}
+{% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}Premiere{% endblock %}
 
 {% block body %}
     {{ form_start(leFormulaire) }}
-    <p> {{ form_row(leFormulaire.num, {'label' : 'Numéro :'}) }}</p>
-    <p><H2> {{ form_row(leFormulaire.nom, {'label' : 'Nom de l\'employe : '}) }}
-                                        {{ form_row (leFormulaire.prenom, {'label' : 'Prénom de l\'employe : '}) }}</H2></p>
-    <p>{{ form_row(leFormulaire.dateNaissance) }}</p>
+    <div class="alert alert-info" role="alert"> {{ form_row(leFormulaire.num, {'label' : 'Numéro :'}) }}</div>
+<div class="alert alert-info" role="alert">{{ form_row(leFormulaire.nom, {'label' : 'Nom de l\'employe : '}) }}</div>
+    <div class="alert alert-info" role="alert">                      {{ form_row (leFormulaire.prenom, {'label' : 'Prénom de l\'employe : '}) }}</div>
+        <div class="alert alert-info" role="alert">{{ form_row(leFormulaire.dateNaissance) }}</div>
     {{ form_end(leFormulaire) }}
+{% endblock %}
+{% block css %}
+    {% stylesheets '@AppBundle/Public/css/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"  />
+    {% endstylesheets %}
 {% endblock %}

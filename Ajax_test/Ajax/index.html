@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Cours Ajax</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="css/design.css" />
+    </head>
+
+    <body>
+
+        <fieldset>
+            <legend>Critères</legend>
+
+            <label for="villes">Ville :</label>
+            <select name="villes" id="villes">
+                <option  disabled="disabled" value="choisir">Choisir</option>
+            </select>
+
+            <label for="sexes">Sexe :</label>
+            <select name="sexes" id="sexes">
+                <option  disabled="disabled" value="choisir">Choisir</option>
+            </select>
+
+            <label for="codes_projet">Code projet :</label>
+            <select name="codes_projet" id="codes_projet">
+                <option  disabled="disabled"value="choisir">Choisir</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Employés correspondants</legend>
+
+            <table id="personnel">
+               <caption>Enregistrements trouvés</caption>
+
+               <tr>
+                   <th>NUMEMP</th>
+                   <th>SUPERIEUR</th>
+                   <th>NOMEMP</th>
+                   <th>PRENOMEMP</th>
+                   <th>CP</th>
+                   <th>VILLE</th>
+                   <th>SEXE</th>
+                   <th>CODEPROJET</th>
+                   <th>POSTE</th>
+                   <th>SALAIRE</th>
+               </tr>
+
+            </table>
+
+        </fieldset>
+
+        <script src="js/ajax.js"></script>
+    </body>
+
+</html>

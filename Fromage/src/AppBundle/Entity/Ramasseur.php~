@@ -1,0 +1,58 @@
+<?php
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Ramasseur
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=80, nullable=false)
+     */
+    private $adrRue1;
+
+    /**
+     * @ORM\Column(type="string", length=80, nullable=false)
+     */
+    private $adrRue2;
+
+    /**
+     * @ORM\Column(type="integer", length=5, nullable=false)
+     */
+    private $cp;
+
+    /**
+     * @ORM\Column(type="string", length=20, nullable=false)
+     */
+    private $ville;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ramassage", mappedBy="ramasseur")
+     */
+    private $ramassage;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Producteur", mappedBy="ramasseur")
+     */
+    private $producteur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Secteur", inversedBy="ramasseur")
+     * @ORM\JoinColumn(name="secteur_id", referencedColumnName="id", nullable=false)
+     */
+    private $secteur;
+}

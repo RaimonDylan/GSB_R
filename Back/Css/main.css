@@ -1,0 +1,29 @@
+form {
+
+}
+
+fieldset {
+    background-color: #ffffff;
+    width: 500px;
+    margin: 0 auto 15px auto;
+    padding: 10px;
+    border: 2px solid #eeab69;
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url(border-radius.htc);
+
+    background-image: -moz-linear-gradient(top, #ffffff, #f4f4f4);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f4f4f4));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#f4f4f4);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#f4f4f4)";
+}
+legend {
+    color: #eeab69;
+    margin-left: 175px;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+    padding: 0;
+}

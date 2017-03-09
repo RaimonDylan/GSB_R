@@ -47,13 +47,55 @@ class LectureCtrlController extends Controller
             ->add('num',NumberType::class)
             ->add('nom', TextType::class, array('label' => 'Saisir votre nom :'))
             ->add('prenom', TextType::class, array('label' => 'Saisir votre prénom :'))
-            ->add('dateNaissance',DateType::class,  array('label' => 'Saisir votre date de naissance :'))
+            ->add('dateNaissance',DateType::class,  array('years' => range(1970, date('Y'))))
             ->add('Enregistrer',SubmitType::class,  array('label' => 'Enregistrer :'))
             ->getForm();
         $sport = 'VolleyBall';
         $autos = array('Lama','Renault','Peugeot','Citroen');
         return $this->render('AppBundle:LectureCtrl:afficheEmpParam.html.twig', array(
             'leFormulaire' => $formulaire->createView(), 'sport' => $sport ,'autos' => $autos
+        ));
+    }
+    /**
+     * @Route(
+     *     path="/afficheEmpTwig",
+     *     name="lectureCtrl_afficheEmpTwig",
+     *     )
+     */
+    public function afficheEmpTwigAction()
+    {
+        $employe = new Employe(1,"Raimon","Dylan",new \DateTime('1997-05-14'));
+        $formulaire = $this->createFormBuilder($employe)
+            ->add('num',NumberType::class)
+            ->add('nom', TextType::class, array('label' => 'Saisir votre nom :'))
+            ->add('prenom', TextType::class, array('label' => 'Saisir votre prénom :'))
+            ->add('dateNaissance',DateType::class,  array('years' => range(1970, date('Y'))))
+            ->add('Enregistrer',SubmitType::class,  array('label' => 'Enregistrer :'))
+            ->getForm();
+        return $this->render('AppBundle:LectureCtrl:afficheEmp2.html.twig', array(
+            'uneEntree' => 'je viens du controller',
+            'leFormulaire' => $formulaire->createView()
+        ));
+    }
+    /**
+     * @Route(
+     *     path="/afficheEmpTwigCss",
+     *     name="lectureCtrl_afficheEmpTwigCss",
+     *     )
+     */
+    public function afficheEmpTwigCssAction()
+    {
+        $employe = new Employe(1,"Raimon","Dylan",new \DateTime('1997-05-14'));
+        $formulaire = $this->createFormBuilder($employe)
+            ->add('num',NumberType::class)
+            ->add('nom', TextType::class, array('label' => 'Saisir votre nom :'))
+            ->add('prenom', TextType::class, array('label' => 'Saisir votre prénom :'))
+            ->add('dateNaissance',DateType::class,  array('years' => range(1970, date('Y'))))
+            ->add('Enregistrer',SubmitType::class,  array('label' => 'Enregistrer :'))
+            ->getForm();
+        return $this->render('AppBundle:LectureCtrl:afficheEmp3.html.twig', array(
+            'uneEntree' => 'je viens du controller',
+            'leFormulaire' => $formulaire->createView()
         ));
     }
 

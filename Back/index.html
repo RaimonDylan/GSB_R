@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Tp Ajax </title>
+
+    <link rel="stylesheet" href="Css/main.css" />
+  </head>
+  <body>
+    <form>
+
+      <fieldset class="cadre">
+        <legend>Critères</legend>
+        <table>
+        <tr>
+            <td>
+                Ville :<br/>
+                <select name="ville" id="ville">
+                <option value="Choisir" selected>Choisir</option>
+                </select>
+            <td>
+            </tr>
+            <tr>
+            <td>
+                Sexe :<br/>
+                <select name="Sexe">
+                <option value="Choisir" selected>Choisir</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Code projet :<br/>
+                <select name="Code projet">
+                <option value="Choisir" selected>Choisir</option>
+                </select>
+            <td>
+        </tr>
+    </table>
+  </fieldset>
+  </form>
+  <table class="table table-hover">
+    <thead>
+      <tr>1</tr>
+    </thead>
+    <tbody>
+      <tr>coucou</tr>
+    </tbody>
+</table>
+  <script src="Php/getVilles.php"></script>
+  <script src="Js/Requete.js"></script>
+  <script>
+  selectVilles();
+  </script>
+  </body>
+</html>

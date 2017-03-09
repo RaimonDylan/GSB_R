@@ -5,14 +5,13 @@ class ClientRepository implements IRepository {
 
   }
   public function findAll(){
-    function afficheTousClients($unObjetPdo){
+      $bdd = new Bdd();
       $sql = "select * from CLIENT";
-      $lignes = $unObjetPdo->query($sql);
+      $lignes = $bdd->query($sql);
       $lignes->setFetchMode(PDO::FETCH_OBJ);
       while($unClient = $lignes->fetch()){
         echo "Numéro du client : " . $unClient->NOCLI . "Nom du client : " . $unClient->NOMCLI . " Prénom : " .$unClient->PRENOMCLI . "<br>";
       }
-    }
   }
   public function findByCp($unCp){
 
